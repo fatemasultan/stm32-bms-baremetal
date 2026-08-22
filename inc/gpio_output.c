@@ -10,7 +10,7 @@
 #define RCC_AHB1ENR           (*((volatile unsigned int*)(RCC_BASE_ADOR+RCC_AHB1ENR_OFFSET)))
 
 
-//set up output functions
+//setup output functions
 
 //INIT
 void gpio_output_init(void){
@@ -25,6 +25,7 @@ void gpio_output_init(void){
     set_bit(GPIOB_MODER,6);
     clear_bit(GPIOB_MODER,7);
 }
+//loop functions
 //High voltage case 
 void Leds_TurnOnAll(void){
     set_bit(GPIOB_ODR,1)
