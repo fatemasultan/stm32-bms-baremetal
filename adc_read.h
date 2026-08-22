@@ -1,5 +1,5 @@
-#ifndef adc_read.h
-#define adc_read.h
+#ifndef ADC_READ_H
+#define ADC_READ_H
 //the stm file to map all the register adresses
 #include "stm32f401xc.h"
 //adc driver file
