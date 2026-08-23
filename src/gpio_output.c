@@ -1,4 +1,4 @@
-#include "bitmath.h"
+#include "../inc/bitmath.h"
 
 #define GPIOB_BASE_ADOR       0x40020400
 #define GPIOB_MODER_OFFSET    0x00
@@ -14,7 +14,7 @@
 
 //INIT
 void gpio_output_init(void){
-    set_bit(RCC_AHB1ENR,0);
+    set_bit(RCC_AHB1ENR,1);
     //1
     set_bit(GPIOB_MODER,2);
     clear_bit(GPIOB_MODER,3);
@@ -28,29 +28,29 @@ void gpio_output_init(void){
 //loop functions
 //High voltage case 
 void Leds_TurnOnAll(void){
-    set_bit(GPIOB_ODR,1)
-    set_bit(GPIOB_ODR,2)
-    set_bit(GPIOB_ODR,3)
+    set_bit(GPIOB_ODR,1);
+    set_bit(GPIOB_ODR,2);
+    set_bit(GPIOB_ODR,3);
 
 }
 //Turn off all
 void Leds_TurnOffAll(void){
-    clear_bit(GPIOB_ODR,1)
-    clear_bit(GPIOB_ODR,2)
-    clear_bit(GPIOB_ODR,3)
+    clear_bit(GPIOB_ODR,1);
+    clear_bit(GPIOB_ODR,2);
+    clear_bit(GPIOB_ODR,3);
 
 }
 //Medium voltage case
 void Leds_medcase(void){
-    set_bit(GPIOB_ODR,1)
-    set_bit(GPIOB_ODR,2)
-    clear_bit(GPIOB_ODR,3)
+    set_bit(GPIOB_ODR,1);
+    set_bit(GPIOB_ODR,2);
+    clear_bit(GPIOB_ODR,3);
 
 }
 //Low voltage case
 void Leds_lowcase(void){
-    set_bit(GPIOB_ODR,1)
-    clear_bit(GPIOB_ODR,2)
-    clear_bit(GPIOB_ODR,3)
+    set_bit(GPIOB_ODR,1);
+    clear_bit(GPIOB_ODR,2);
+    clear_bit(GPIOB_ODR,3);
 
 }
