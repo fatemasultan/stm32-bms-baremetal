@@ -44,7 +44,7 @@ void Leds_TurnOffAll(void){
 void Leds_medcase(void){
     set_bit(GPIOB_ODR,1);
     set_bit(GPIOB_ODR,2);
-    clear_bit(GPIOB_ODR,3;)
+    clear_bit(GPIOB_ODR,3);
 
 }
 //Low voltage case
