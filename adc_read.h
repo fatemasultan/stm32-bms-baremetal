@@ -5,6 +5,9 @@
 //adc driver file
 #include "ADC_DRIVER.h"
 
+
+//to start the conversion
+void adc_start(void);
 //to return the final voltage 
 float adc_getVolt(void);
 

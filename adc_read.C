@@ -10,6 +10,13 @@ static uint16_t buffer[8] = {0,0,0,0,0,0,0,0};
 static uint8_t index = 0;
 
 
+
+//to start the conversion
+void adc_start(void){
+    ADC1->CR2 |= ADC_CR2_SWSTART;
+}
+
+
 void ADC_IRQHandler(void){
 //check if flag is set (Eoc)
 if(ADC1->SR & ADC_SR_EOC){
