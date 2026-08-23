@@ -1,4 +1,4 @@
-#include "../inc/bitmath.h"
+#include "bitmath.h"
 
 #define GPIOA_BASE_ADDR       0x40020000
 #define GPIOA_MODER_OFFSET    0x00
@@ -7,10 +7,10 @@
 #define RCC_BASE_ADDR         0x40023800 
 #define RCC_AB1ENR_OFFSET     0x30
 
-#define GPIOA_MODER    *((volatile unsigned int*)(GPIOA_BASE_ADDR+GPIOA_MODER_OFFSET))
-#define GPIOA_PUPDR    *((volatile unsigned int*)(GPIOA_BASE_ADDR+GPIOA_PUPDR_OFFSET))
-#define GPIOA_IDR      *((volatile unsigned int*)(GPIOA_BASE_ADDR+GPIOA_IDR_OFFSET))
-#define RCC_AB1ENR     *((volatie unsigned int*)(RCC_BASE_ADDR+RCC_AB1ENR_OFFSET))
+#define GPIOA_MODER    (*((volatile unsigned int*)(GPIOA_BASE_ADDR+GPIOA_MODER_OFFSET)))
+#define GPIOA_PUPDR    (*((volatile unsigned int*)(GPIOA_BASE_ADDR+GPIOA_PUPDR_OFFSET)))
+#define GPIOA_IDR      (*((volatile unsigned int*)(GPIOA_BASE_ADDR+GPIOA_IDR_OFFSET)))
+#define RCC_AHB1ENR     (*((volatile unsigned int*)(RCC_BASE_ADDR+RCC_AB1ENR_OFFSET)))
 
 void gpio_input_init(){
     set_bit(RCC_AHB1ENR,0); //gpioA clock
@@ -40,7 +40,7 @@ int gpio_readSwitch1(void){
     return get_bit(GPIOA_IDR,1);
 }
 
-int gpio_reatSwitch2(void){
+int gpio_readSwitch2(void){
     return get_bit(GPIOA_IDR,2);
 }
 

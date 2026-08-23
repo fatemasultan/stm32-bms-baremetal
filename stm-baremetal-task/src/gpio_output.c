@@ -1,4 +1,4 @@
-#include "../inc/bitmath.h"
+#include "bitmath.h"
 
 #define GPIOB_BASE_ADOR       0x40020400
 #define GPIOB_MODER_OFFSET    0x00
