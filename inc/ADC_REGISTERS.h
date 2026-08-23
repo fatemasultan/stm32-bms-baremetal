@@ -5,8 +5,10 @@
 
 #define GPIOA_MODER_OFFSET  0x00
 
-#define ADC_BASE_ADDR       0x40012000
+#define NVIC_BASE_ADDR       0xE000E100
+#define NVIC_ISER0_OFFSET    0x00
 
+#define ADC_BASE_ADDR       0x40012000
 
 #define ADC_CR1_OFFSET      0x04
 #define ADC_CR2_OFFSET      0x08
@@ -33,7 +35,9 @@
 #define ADC_SR       *((volatile unsigned int *)(ADC_BASE_ADDR + ADC_SR_OFFSET))
 #define ADC_CCR      *((volatile unsigned int *)(ADC_BASE_ADDR + ADC_CCR_OFFSET))
 
-#define RCC_AHB1ENR     *((volatile unsigned int *)(RCC_BASE_ADDR + RCC_AHB1_OFFSET))
-#define RCC_APB2ENR   *((volatile unsigned int *)(RCC_BASE_ADDR + RCC_APB2_OFFSET))
+#define RCC_AHB1ENR  *((volatile unsigned int *)(RCC_BASE_ADDR + RCC_AHB1_OFFSET))
+#define RCC_APB2ENR  *((volatile unsigned int *)(RCC_BASE_ADDR + RCC_APB2_OFFSET))
+
+#define NVIC_ISER0 *((volatile unsigned int *)(NVIC_BASE_ADDR + NVIC_ISER0_OFFSET))
 
 #endif  

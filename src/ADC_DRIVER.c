@@ -23,6 +23,8 @@ void ADC_driver_init(){
   // a/d converetor on
   set_bit(ADC_CR2, 0);
   
+  // to allow the cpu to recieve the interrupt
+  set_bit(NVIC_ISER0, 18);
 
   // no need to write for sqr1 since its only one conversion which is 0000 in sqr "reset value" 
   // same goes for sqr3 ---> channel 0 : 0000
