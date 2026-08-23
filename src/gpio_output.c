@@ -14,7 +14,7 @@
 
 //INIT
 void gpio_output_init(void){
-    set_bit(RCC_AHB1ENR,0);
+    set_bit(RCC_AHB1ENR,1);
     //1
     set_bit(GPIOB_MODER,2);
     clear_bit(GPIOB_MODER,3);
