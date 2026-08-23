@@ -1,0 +1,266 @@
+Archive member included to satisfy reference by file (symbol)
+
+C:/Program Files (x86)/Arm/GNU Toolchain mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(libc_a-init.o)
+                              startup.o (__libc_init_array)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 main.o
+ .data          0x00000000        0x0 main.o
+ .bss           0x00000000        0x0 main.o
+ .text          0x00000000        0x0 gpio_input.o
+ .data          0x00000000        0x0 gpio_input.o
+ .bss           0x00000000        0x0 gpio_input.o
+ .text          0x00000000        0x0 gpio_output.o
+ .data          0x00000000        0x0 gpio_output.o
+ .bss           0x00000000        0x0 gpio_output.o
+ .text          0x00000000        0x4 startup.o
+ .data          0x00000000        0x0 startup.o
+ .bss           0x00000000        0x0 startup.o
+ .text          0x00000000        0x0 C:/Program Files (x86)/Arm/GNU Toolchain mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(libc_a-init.o)
+ .data          0x00000000        0x0 C:/Program Files (x86)/Arm/GNU Toolchain mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(libc_a-init.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Arm/GNU Toolchain mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(libc_a-init.o)
+ .debug_frame   0x00000000       0x2c C:/Program Files (x86)/Arm/GNU Toolchain mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(libc_a-init.o)
+ .ARM.attributes
+                0x00000000       0x2e C:/Program Files (x86)/Arm/GNU Toolchain mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(libc_a-init.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00040000         xr
+RAM              0x20000000         0x00010000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD main.o
+LOAD gpio_input.o
+LOAD gpio_output.o
+LOAD startup.o
+                0x20010000                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
+                0x00000200                        _Min_Heap_Size = 0x200
+                0x00000400                        _Min_Stack_Size = 0x400
+
+.isr_vector     0x08000000       0x40
+                0x08000000                        . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x08000000       0x40 startup.o
+                0x08000000                g_pfnVectors
+                0x08000040                        . = ALIGN (0x4)
+
+.text           0x08000040      0x360
+                0x08000040                        . = ALIGN (0x4)
+ *(.text)
+ *(.text*)
+ .text.setup    0x08000040       0x10 main.o
+                0x08000040                setup
+ .text.loop     0x08000050       0x6a main.o
+                0x08000050                loop
+ .text.main     0x080000ba        0xe main.o
+                0x080000ba                main
+ .text.gpio_input_init
+                0x080000c8       0xb4 gpio_input.o
+                0x080000c8                gpio_input_init
+ .text.gpio_readSwitch1
+                0x0800017c       0x1c gpio_input.o
+                0x0800017c                gpio_readSwitch1
+ .text.gpio_readSwitch2
+                0x08000198       0x1c gpio_input.o
+                0x08000198                gpio_readSwitch2
+ .text.gpio_readSwitch3
+                0x080001b4       0x1c gpio_input.o
+                0x080001b4                gpio_readSwitch3
+ .text.gpio_output_init
+                0x080001d0       0x68 gpio_output.o
+                0x080001d0                gpio_output_init
+ .text.Leds_TurnOnAll
+                0x08000238       0x34 gpio_output.o
+                0x08000238                Leds_TurnOnAll
+ .text.Leds_TurnOffAll
+                0x0800026c       0x34 gpio_output.o
+                0x0800026c                Leds_TurnOffAll
+ .text.Leds_medcase
+                0x080002a0       0x34 gpio_output.o
+                0x080002a0                Leds_medcase
+ .text.Leds_lowcase
+                0x080002d4       0x34 gpio_output.o
+                0x080002d4                Leds_lowcase
+ .text.Reset_Handler
+                0x08000308       0x44 startup.o
+                0x08000308                Reset_Handler
+ .text._init    0x0800034c        0x2 startup.o
+                0x0800034c                _init
+ .text._fini    0x0800034e        0x2 startup.o
+                0x0800034e                _fini
+ .text.Default_Handler
+                0x08000350        0x2 startup.o
+ *fill*         0x08000352        0x2 
+ .text.__libc_init_array
+                0x08000354       0x4c C:/Program Files (x86)/Arm/GNU Toolchain mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a(libc_a-init.o)
+                0x08000354                __libc_init_array
+ *(.rodata)
+ *(.rodata*)
+ *(.glue_7)
+ .glue_7        0x080003a0        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x080003a0        0x0 linker stubs
+ *(.eh_frame)
+ *(.init)
+ *(.fini)
+                0x080003a0                        . = ALIGN (0x4)
+                0x080003a0                        _etext = .
+
+.vfp11_veneer   0x080003a0        0x0
+ .vfp11_veneer  0x080003a0        0x0 linker stubs
+
+.v4_bx          0x080003a0        0x0
+ .v4_bx         0x080003a0        0x0 linker stubs
+
+.iplt           0x080003a0        0x0
+ .iplt          0x080003a0        0x0 main.o
+
+.rel.dyn        0x080003a0        0x0
+ .rel.iplt      0x080003a0        0x0 main.o
+
+.preinit_array  0x080003a0        0x0
+                0x080003a0                        . = ALIGN (0x4)
+                0x080003a0                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array*)
+                0x080003a0                        PROVIDE (__preinit_array_end = .)
+
+.init_array     0x080003a0        0x0
+                0x080003a0                        . = ALIGN (0x4)
+                0x080003a0                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array*)
+                0x080003a0                        PROVIDE (__init_array_end = .)
+
+.fini_array     0x080003a0        0x0
+                0x080003a0                        . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array*)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+                0x080003a0                        _sidata = LOADADDR (.data)
+
+.data           0x20000000        0x0 load address 0x080003a0
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sdata = .
+ *(.data)
+ *(.data*)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _edata = .
+
+.igot.plt       0x20000000        0x0 load address 0x080003a0
+ .igot.plt      0x20000000        0x0 main.o
+
+.bss            0x20000000        0x0 load address 0x080003a0
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sbss = .
+                0x20000000                        __bss_start__ = _sbss
+ *(.bss)
+ *(.bss*)
+ *(COMMON)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _ebss = .
+                0x20000000                        __bss_end__ = _ebss
+
+._user_heap_stack
+                0x20000000      0x600 load address 0x080003a0
+                0x20000000                        . = ALIGN (0x8)
+                [!provide]                        PROVIDE (end = .)
+                [!provide]                        PROVIDE (_end = .)
+                0x20000200                        . = (. + _Min_Heap_Size)
+ *fill*         0x20000000      0x200 
+                0x20000600                        . = (. + _Min_Stack_Size)
+ *fill*         0x20000200      0x400 
+                0x20000600                        . = ALIGN (0x8)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+
+.ARM.attributes
+                0x00000000       0x2c
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x2e main.o
+ .ARM.attributes
+                0x0000002e       0x2e gpio_input.o
+ .ARM.attributes
+                0x0000005c       0x2e gpio_output.o
+ .ARM.attributes
+                0x0000008a       0x21 startup.o
+OUTPUT(output.elf elf32-littlearm)
+LOAD linker stubs
+LOAD C:/Program Files (x86)/Arm/GNU Toolchain mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc.a
+LOAD C:/Program Files (x86)/Arm/GNU Toolchain mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libm.a
+LOAD C:/Program Files (x86)/Arm/GNU Toolchain mingw-w64-i686-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.3.1/thumb/v7e-m/nofp\libgcc.a
+
+.debug_info     0x00000000      0x256
+ .debug_info    0x00000000      0x11d main.o
+ .debug_info    0x0000011d       0x7c gpio_input.o
+ .debug_info    0x00000199       0x77 gpio_output.o
+ .debug_info    0x00000210       0x46 startup.o
+
+.debug_abbrev   0x00000000      0x183
+ .debug_abbrev  0x00000000       0xdd main.o
+ .debug_abbrev  0x000000dd       0x53 gpio_input.o
+ .debug_abbrev  0x00000130       0x2f gpio_output.o
+ .debug_abbrev  0x0000015f       0x24 startup.o
+
+.debug_aranges  0x00000000       0xe0
+ .debug_aranges
+                0x00000000       0x30 main.o
+ .debug_aranges
+                0x00000030       0x38 gpio_input.o
+ .debug_aranges
+                0x00000068       0x40 gpio_output.o
+ .debug_aranges
+                0x000000a8       0x38 startup.o
+
+.debug_rnglists
+                0x00000000       0x95
+ .debug_rnglists
+                0x00000000       0x1f main.o
+ .debug_rnglists
+                0x0000001f       0x26 gpio_input.o
+ .debug_rnglists
+                0x00000045       0x2b gpio_output.o
+ .debug_rnglists
+                0x00000070       0x25 startup.o
+
+.debug_line     0x00000000      0x393
+ .debug_line    0x00000000      0x1c0 main.o
+ .debug_line    0x000001c0       0x95 gpio_input.o
+ .debug_line    0x00000255       0xaf gpio_output.o
+ .debug_line    0x00000304       0x8f startup.o
+
+.debug_str      0x00000000      0x229
+ .debug_str     0x00000000      0x229 main.o
+                                0x212 (size before relaxing)
+ .debug_str     0x00000229        0x0 gpio_input.o
+                                0x11a (size before relaxing)
+ .debug_str     0x00000229        0x0 gpio_output.o
+                                0x122 (size before relaxing)
+ .debug_str     0x00000229        0x0 startup.o
+                                 0x81 (size before relaxing)
+
+.comment        0x00000000       0x46
+ .comment       0x00000000       0x46 main.o
+                                 0x47 (size before relaxing)
+ .comment       0x00000046        0x0 gpio_input.o
+                                 0x47 (size before relaxing)
+ .comment       0x00000046        0x0 gpio_output.o
+                                 0x47 (size before relaxing)
+
+.debug_frame    0x00000000      0x1ac
+ .debug_frame   0x00000000       0x6c main.o
+ .debug_frame   0x0000006c       0x90 gpio_input.o
+ .debug_frame   0x000000fc       0xb0 gpio_output.o
+
+.debug_line_str
+                0x00000000       0x59
+ .debug_line_str
+                0x00000000       0x59 startup.o

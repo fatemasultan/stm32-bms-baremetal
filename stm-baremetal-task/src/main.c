@@ -8,26 +8,26 @@ void setup(void) {
 }
 
 void loop(void) {
-    uint8_t pressed_count=0;
+     uint8_t pressed_count=0;
 
     if (gpio_readSwitch1() == 0) {
         pressed_count++;
-    }
-     if (gpio_readSwitch2() == 0) {
+     }
+    if (gpio_readSwitch2() == 0) {
         pressed_count++;
-    }
+     }
     if (gpio_readSwitch3() == 0) {
         pressed_count++;
-    }
+     }
     if (pressed_count==3){
         Leds_TurnOnAll();
-    }
+     }
     else if(pressed_count==2)  {
         Leds_medcase();
     }
     else if(pressed_count==1){
-        Leds_lowcase();
-    } 
+       Leds_lowcase();
+     } 
     else{
         Leds_TurnOffAll();
     }
